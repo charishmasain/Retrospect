@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Retrospect | The Digital Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "secondary": "#41eec2",
+                  "secondary-container": "#00d1a7",
+                  "surface-container-highest": "#35343a",
+                  "error": "#ffb4ab",
+                  "on-surface-variant": "#c7c4d8",
+                  "on-primary-fixed": "#100069",
+                  "on-error-container": "#ffdad6",
+                  "on-primary": "#2000a4",
+                  "primary-fixed": "#e3dfff",
+                  "on-primary-fixed-variant": "#3622ca",
+                  "primary-container": "#8781ff",
+                  "surface-container-low": "#1b1b20",
+                  "error-container": "#93000a",
+                  "on-surface": "#e4e1e9",
+                  "surface": "#131318",
+                  "on-tertiary": "#233143",
+                  "on-secondary-fixed": "#002118",
+                  "surface-container-lowest": "#0e0e13",
+                  "surface-variant": "#35343a",
+                  "on-secondary": "#00382b",
+                  "background": "#131318",
+                  "surface-container": "#1f1f25",
+                  "inverse-on-surface": "#303036",
+                  "surface-bright": "#39383e",
+                  "outline": "#918fa1",
+                  "tertiary": "#b9c8de",
+                  "secondary-fixed-dim": "#28dfb5",
+                  "on-background": "#e4e1e9",
+                  "tertiary-fixed-dim": "#b9c8de",
+                  "on-secondary-container": "#005441",
+                  "on-primary-container": "#1b0091",
+                  "on-tertiary-container": "#1c2b3c",
+                  "secondary-fixed": "#55fcd0",
+                  "inverse-primary": "#4f44e2",
+                  "surface-tint": "#c4c0ff",
+                  "tertiary-container": "#8392a6",
+                  "surface-container-high": "#2a292f",
+                  "on-secondary-fixed-variant": "#00513f",
+                  "on-error": "#690005",
+                  "primary-fixed-dim": "#c4c0ff",
+                  "outline-variant": "#464555",
+                  "inverse-surface": "#e4e1e9",
+                  "primary": "#c4c0ff",
+                  "surface-dim": "#131318",
+                  "on-tertiary-fixed": "#0d1c2d",
+                  "on-tertiary-fixed-variant": "#39485a",
+                  "tertiary-fixed": "#d4e4fa"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "fontFamily": {
+                  "headline": ["Newsreader", "serif"],
+                  "body": ["Manrope", "sans-serif"],
+                  "label": ["Manrope", "sans-serif"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #0a0a0f;
+      color: #e4e1e9;
+      font-family: 'Manrope', sans-serif;
+    }
+    .font-serif { font-family: 'Newsreader', serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+      background: rgba(31, 31, 37, 0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(70, 69, 85, 0.15);
+    }
+    .hero-glow {
+      background: radial-gradient(circle at center, rgba(196, 192, 255, 0.08) 0%, transparent 70%);
+    }
+  </style>
+</head>
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-xl">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
+<div class="text-2xl font-serif italic text-indigo-300">Retrospect</div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-indigo-300 font-semibold border-b-2 border-indigo-300 pb-1 tracking-wide" href="#">How it Works</a>
+<a class="text-slate-400 font-medium hover:text-indigo-200 transition-colors tracking-wide" href="#">Features</a>
+<a class="text-slate-400 font-medium hover:text-indigo-200 transition-colors tracking-wide" href="#">Get Started</a>
+</div>
+<button class="bg-primary text-on-primary-fixed px-6 py-2.5 rounded-xl font-semibold hover:opacity-80 transition-all duration-300 active:scale-95">
+        Start Free
+      </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-48 pb-32 overflow-hidden">
+<div class="absolute inset-0 hero-glow -z-10"></div>
+<div class="max-w-7xl mx-auto px-8 text-center">
+<h1 class="text-6xl md:text-8xl font-headline font-medium tracking-tight mb-8 leading-[1.1] max-w-4xl mx-auto text-white">
+          Your decisions. <br/>
+<span class="italic text-primary">Remembered.</span> Learned. Improved.
+        </h1>
+<p class="text-xl md:text-2xl text-slate-400 font-body max-w-2xl mx-auto mb-12 leading-relaxed">
+          The private gallery for your intellectual legacy. An AI decision memory agent that transforms hindsight into foresight.
+        </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="bg-primary text-on-primary-fixed px-8 py-4 rounded-xl text-lg font-bold hover:opacity-90 transition-all active:scale-95">
+            Get Started
+          </button>
+<button class="text-primary px-8 py-4 rounded-xl text-lg font-semibold hover:underline transition-all">
+            See How It Works
+          </button>
+</div>
+</div>
+<!-- Visual Accent -->
+<div class="mt-24 max-w-5xl mx-auto px-8">
+<div class="glass-card rounded-2xl p-4 relative">
+<img class="w-full h-auto rounded-xl grayscale-[0.2] opacity-80" data-alt="minimalist user interface showing a timeline of complex decisions with soft purple glowing nodes and elegant typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADkXOKU-GijdEK-_iN3scSE2eE7-5Cb6ww6Mn24eFAcUZY-4gQlkMdpVS1IpnFnDcvgelMvg5pSFYtztK6ikz7_1dzXw5-RD0p_sx2mcYXcovYQbHXerYWqpUZEz4GYwaIlfYgoCWQ5BVa-VkNeNL960jaf5AnkzjO17LB-0QLYNLcdoUVTwHut9Si-ZAXbkiOy2h4v3z7W6CYcuHHU5JKV7q4bmEWLboMZc5OCGGK3AtDuvXfnGTkG-a86SEpfXCfRC09UJhLLjM"/>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 blur-3xl rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Stats Bar -->
+<section class="bg-surface-container-low py-16">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+<div class="space-y-2">
+<div class="text-4xl font-headline text-primary">2,400+</div>
+<div class="text-xs uppercase tracking-widest text-slate-500 font-label">Decisions Logged</div>
+</div>
+<div class="space-y-2">
+<div class="text-4xl font-headline text-secondary">94%</div>
+<div class="text-xs uppercase tracking-widest text-slate-500 font-label">Pattern Accuracy</div>
+</div>
+<div class="space-y-2">
+<div class="text-4xl font-headline text-primary">48hr</div>
+<div class="text-xs uppercase tracking-widest text-slate-500 font-label">Average to First Insight</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-32 relative">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-20">
+<span class="text-xs uppercase tracking-[0.3em] text-primary font-label mb-4 block">The Methodology</span>
+<h2 class="text-5xl font-headline text-white max-w-xl">A sanctuary for your critical thinking.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="glass-card p-10 rounded-xl group hover:border-primary/30 transition-all duration-500">
+<div class="w-14 h-14 rounded-lg bg-surface-container-highest flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary text-3xl">history_edu</span>
+</div>
+<h3 class="text-2xl font-headline text-white mb-4">Log a Decision</h3>
+<p class="text-slate-400 font-body leading-relaxed mb-6">
+              Describe what you decided and what happened. Every nuanced detail matters in your personal archive.
+            </p>
+<div class="h-1 w-0 group-hover:w-full bg-primary/40 transition-all duration-700"></div>
+</div>
+<!-- Card 2 -->
+<div class="glass-card p-10 rounded-xl group hover:border-secondary/30 transition-all duration-500">
+<div class="w-14 h-14 rounded-lg bg-surface-container-highest flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-secondary text-3xl">psychology</span>
+</div>
+<h3 class="text-2xl font-headline text-white mb-4">Agent Remembers</h3>
+<p class="text-slate-400 font-body leading-relaxed mb-6">
+              Hindsight retains every decision as memory. No detail is too small for our neural retrieval system.
+            </p>
+<div class="h-1 w-0 group-hover:w-full bg-secondary/40 transition-all duration-700"></div>
+</div>
+<!-- Card 3 -->
+<div class="glass-card p-10 rounded-xl group hover:border-primary/30 transition-all duration-500">
+<div class="w-14 h-14 rounded-lg bg-surface-container-highest flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary text-3xl">auto_awesome</span>
+</div>
+<h3 class="text-2xl font-headline text-white mb-4">Get Smarter Advice</h3>
+<p class="text-slate-400 font-body leading-relaxed mb-6">
+              Agent recalls patterns and improves over time, offering suggestions based on your historical outcomes.
+            </p>
+<div class="h-1 w-0 group-hover:w-full bg-primary/40 transition-all duration-700"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Quote Section -->
+<section class="py-24 max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row items-center gap-16">
+<div class="w-full md:w-1/2">
+<img class="rounded-2xl w-full h-[500px] object-cover opacity-60" data-alt="a dark aesthetic library with glowing floating digital artifacts and crystalline textures representing memory nodes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzx6oyWDtiX-Yp0LDLQ9KMVApA_-gd_JRTMpj2Wpcm0R5r1ZVXOzuJlwpJtDcanBs5Y-QxDSzM-kD3NUgTvbIiGhp6VPPO3nJ870MxeIrChXfAZB4NyjVTKaMoa3o0TO76X1vh2R-KUHfO430RevunSYALOIm2t5zLXxwIebicLkutGp9LHISMbqx5wLTfWlxoKJW9nzDZehUf9S-OeeecqRNkxu34X36FLJsFgFtk0h9Xxm5Bc0Z6jb04-h6R9sZkvTQJwxBZZF4"/>
+</div>
+<div class="w-full md:w-1/2 space-y-8">
+<blockquote class="text-4xl font-headline italic text-slate-200 leading-snug">
+            "We don't just record data; we preserve the intent behind every choice, building a bridge between who you were and who you are becoming."
+          </blockquote>
+<div class="flex items-center gap-4">
+<div class="h-px w-12 bg-primary"></div>
+<p class="text-xs uppercase tracking-widest text-slate-500 font-label">The Digital Curator Ethos</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-950 dark:bg-[#131318] py-12 border-t border-white/5 mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-8">
+<div class="mb-8 md:mb-0">
+<span class="text-xl font-serif text-indigo-300">Retrospect</span>
+<p class="text-slate-500 text-sm mt-2 font-body">© 2024 Retrospect. The Digital Curator.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-indigo-200 transition-all duration-200 font-label text-xs uppercase tracking-widest" href="#">Privacy</a>
+<a class="text-slate-500 hover:text-indigo-200 transition-all duration-200 font-label text-xs uppercase tracking-widest" href="#">Terms</a>
+<a class="text-slate-500 hover:text-indigo-200 transition-all duration-200 font-label text-xs uppercase tracking-widest" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

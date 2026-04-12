@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Retrospect | Ask Agent</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#35343a",
+                      "primary-fixed-dim": "#c4c0ff",
+                      "on-primary": "#2000a4",
+                      "inverse-surface": "#e4e1e9",
+                      "on-tertiary-fixed": "#0d1c2d",
+                      "tertiary": "#b9c8de",
+                      "on-tertiary": "#233143",
+                      "primary-fixed": "#e3dfff",
+                      "secondary-container": "#00d1a7",
+                      "outline": "#918fa1",
+                      "on-tertiary-fixed-variant": "#39485a",
+                      "surface-container-low": "#1b1b20",
+                      "secondary-fixed-dim": "#28dfb5",
+                      "on-error": "#690005",
+                      "primary-container": "#8781ff",
+                      "tertiary-fixed": "#d4e4fa",
+                      "primary": "#c4c0ff",
+                      "surface-container": "#1f1f25",
+                      "on-secondary-fixed-variant": "#00513f",
+                      "on-secondary": "#00382b",
+                      "background": "#131318",
+                      "on-secondary-fixed": "#002118",
+                      "surface-bright": "#39383e",
+                      "secondary-fixed": "#55fcd0",
+                      "on-surface-variant": "#c7c4d8",
+                      "on-primary-container": "#1b0091",
+                      "on-background": "#e4e1e9",
+                      "error-container": "#93000a",
+                      "surface-container-high": "#2a292f",
+                      "on-primary-fixed-variant": "#3622ca",
+                      "error": "#ffb4ab",
+                      "inverse-on-surface": "#303036",
+                      "on-tertiary-container": "#1c2b3c",
+                      "on-error-container": "#ffdad6",
+                      "secondary": "#41eec2",
+                      "inverse-primary": "#4f44e2",
+                      "surface": "#131318",
+                      "tertiary-container": "#8392a6",
+                      "surface-dim": "#131318",
+                      "on-secondary-container": "#005441",
+                      "on-surface": "#e4e1e9",
+                      "surface-variant": "#35343a",
+                      "tertiary-fixed-dim": "#b9c8de",
+                      "surface-container-lowest": "#0e0e13",
+                      "on-primary-fixed": "#100069",
+                      "outline-variant": "#464555",
+                      "surface-tint": "#c4c0ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Newsreader"],
+                      "body": ["Manrope"],
+                      "label": ["Manrope"]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .font-headline { font-family: 'Newsreader', serif; }
+      </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary/30 selection:text-primary min-h-screen flex overflow-hidden">
+<!-- SideNavBar (Persistent Left) -->
+<aside class="fixed left-0 top-0 h-full w-64 bg-zinc-950 dark:bg-[#131318] border-r border-zinc-800/50 flex flex-col z-50">
+<div class="px-6 py-8">
+<div class="flex items-center gap-3 mb-10">
+<div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div>
+<h1 class="text-2xl font-serif text-[#c4c0ff] tracking-tighter">Retrospect</h1>
+<p class="text-[10px] font-label uppercase tracking-widest text-zinc-500">Decision Intelligence</p>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-500 hover:text-zinc-300 hover:bg-[#1f1f25] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label text-sm tracking-wide">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-500 hover:text-zinc-300 hover:bg-[#1f1f25] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">post_add</span>
+<span class="font-label text-sm tracking-wide">Log Decision</span>
+</a>
+<!-- Active Tab: Ask Agent -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#c4c0ff] font-bold border-r-2 border-[#c4c0ff] bg-[#1f1f25]/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="font-label text-sm tracking-wide">Ask Agent</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-500 hover:text-zinc-300 hover:bg-[#1f1f25] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-label text-sm tracking-wide">Insights</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto px-6 py-8">
+<div class="p-4 rounded-2xl bg-surface-container-low border border-outline-variant/10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-primary/20">
+<img alt="User Curator Profile" class="w-full h-full object-cover" data-alt="close up portrait of a professional man with a neutral expression and soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj3i9ele6oFzLc9KYezD7Bcj4_dRVPQZiKGRIsXq0-Cj9nZ8Ut1kIoGfTZd0Z7lZZAwtBEAHNcBTofGQTxXPvd7cfDiPDYU44vzhZFdaMMBRHuJDqY5Pv4CGxO9GTJc4-R2Tk8nu1btEfE4j1VXJLoI1VQtLIq-z_PFHalHxbZwJ3Ag3eTwE4SrL2TJ1rqd_JvJQuCrjKN3fL5j618laKqpJXcNJTZ_QT8sluKSjtPzTyWCfk8KEG8CXrD2sSr-uMBvq9owm1WWNE"/>
+</div>
+<div>
+<p class="text-sm font-semibold">Alex Chen</p>
+<p class="text-[10px] text-zinc-500 uppercase tracking-tighter">Premium Curator</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Content Wrapper -->
+<div class="flex-1 ml-64 flex flex-col h-screen overflow-hidden">
+<!-- TopNavBar (Persistent Top) -->
+<header class="sticky top-0 z-40 bg-zinc-950/80 dark:bg-[#131318]/80 backdrop-blur-xl flex justify-between items-center w-full px-8 py-4">
+<div class="flex items-center gap-6 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 text-lg">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/10 rounded-full py-2 pl-10 pr-4 text-sm focus:outline-none focus:ring-1 focus:ring-primary/40 transition-all" placeholder="Search memories..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-zinc-400 hover:text-[#41eec2] transition-colors opacity-80 hover:opacity-100">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-zinc-400 hover:text-[#41eec2] transition-colors opacity-80 hover:opacity-100">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<!-- Main Content (Two-Column Split) -->
+<main class="flex-1 flex overflow-hidden">
+<!-- LEFT COLUMN: Chat Interface (60%) -->
+<section class="w-[60%] flex flex-col border-r border-outline-variant/5">
+<!-- Header -->
+<div class="px-10 py-8 border-b border-outline-variant/5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">auto_awesome</span>
+<h2 class="text-3xl font-headline font-semibold text-on-surface tracking-tight">Ask Retrospect</h2>
+</div>
+<p class="mt-2 text-on-surface-variant font-body">Your agent recalls your past decisions before every answer</p>
+</div>
+<!-- Chat Area -->
+<div class="flex-1 overflow-y-auto px-10 py-8 space-y-10">
+<!-- User Bubble -->
+<div class="flex justify-end">
+<div class="max-w-[80%] bg-primary-container/20 text-on-surface p-5 rounded-2xl rounded-tr-none border border-primary/20 shadow-xl shadow-primary/5">
+<p class="font-body leading-relaxed">Should I run Instagram ads again for my new product?</p>
+</div>
+</div>
+<!-- Agent Bubble -->
+<div class="flex justify-start items-start gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div class="max-w-[85%] space-y-4">
+<div class="bg-surface-container-low p-6 rounded-2xl rounded-tl-none border-l-4 border-primary text-on-surface shadow-2xl relative">
+<!-- Subtle glow effect -->
+<div class="absolute inset-0 bg-primary/2 blur-2xl rounded-2xl pointer-events-none"></div>
+<p class="font-body leading-relaxed relative z-10">
+                                    Based on your decision history, I'd advise against it. You've run Instagram ads twice before — both resulted in negative outcomes. Your organic content strategy (LinkedIn posts, Twitter threads) has a 100% positive outcome rate across 3 decisions. I'd recommend doubling down on content marketing instead.
+                                </p>
+</div>
+<!-- Memory Confidence Chip -->
+<div class="flex items-center gap-2">
+<span class="flex h-2 w-2 rounded-full bg-secondary"></span>
+<p class="text-xs font-label uppercase tracking-widest text-secondary font-semibold">Based on 5 recalled memories — confidence 82%</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Input Area -->
+<div class="p-8 bg-surface">
+<div class="relative max-w-4xl mx-auto">
+<input class="w-full bg-surface-container p-5 pr-16 rounded-2xl border border-outline-variant/10 focus:border-primary/40 focus:ring-0 text-on-surface placeholder:text-zinc-600 transition-all shadow-inner" placeholder="Ask about a decision you're facing..." type="text"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-primary-container text-on-primary-container rounded-xl flex items-center justify-center hover:scale-95 transition-transform">
+<span class="material-symbols-outlined">arrow_upward</span>
+</button>
+</div>
+<p class="text-center mt-3 text-[10px] text-zinc-600 uppercase tracking-widest">Shift + Enter for new line</p>
+</div>
+</section>
+<!-- RIGHT COLUMN: Memory Feed Panel (40%) -->
+<section class="w-[40%] bg-[#0d0d14] flex flex-col">
+<!-- Header -->
+<div class="px-8 py-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">bolt</span>
+<h3 class="text-xl font-headline font-medium">Hindsight Memory Feed</h3>
+</div>
+<p class="text-xs text-zinc-500 mt-1">Memories recalled for this query are highlighted</p>
+</div>
+<!-- Memory List -->
+<div class="flex-1 overflow-y-auto px-8 space-y-6 pb-12">
+<!-- Card 1: Recalled -->
+<div class="group p-5 rounded-xl bg-surface-container/60 border border-primary/40 shadow-lg shadow-primary/5 transition-all relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5 opacity-40"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-label uppercase tracking-widest text-primary font-bold flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> Recalled
+                                </span>
+<span class="text-[10px] text-zinc-500">Oct 12, 2023</span>
+</div>
+<h4 class="font-body font-semibold text-on-surface mb-2">Instagram Ads Campaign (Winter)</h4>
+<div class="flex gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-[10px] text-on-surface-variant font-label uppercase tracking-tight">Marketing</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container/20 text-[10px] text-error font-label uppercase tracking-tight">Negative</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Stored -->
+<div class="group p-5 rounded-xl bg-surface-container-low/40 border border-outline-variant/10 hover:border-outline-variant/30 transition-all">
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-label uppercase tracking-widest text-zinc-600 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full border border-zinc-600"></span> Stored
+                            </span>
+<span class="text-[10px] text-zinc-500">Nov 04, 2023</span>
+</div>
+<h4 class="font-body font-semibold text-on-surface mb-2">LinkedIn Content Pipeline</h4>
+<div class="flex gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-[10px] text-on-surface-variant font-label uppercase tracking-tight">Strategy</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/20 text-[10px] text-secondary font-label uppercase tracking-tight">Positive</span>
+</div>
+</div>
+<!-- Card 3: Recalled -->
+<div class="group p-5 rounded-xl bg-surface-container/60 border border-primary/40 shadow-lg shadow-primary/5 transition-all relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5 opacity-40"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-label uppercase tracking-widest text-primary font-bold flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Recalled
+                                </span>
+<span class="text-[10px] text-zinc-500">Aug 21, 2023</span>
+</div>
+<h4 class="font-body font-semibold text-on-surface mb-2">Summer Promo Spend</h4>
+<div class="flex gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-[10px] text-on-surface-variant font-label uppercase tracking-tight">Marketing</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container/20 text-[10px] text-error font-label uppercase tracking-tight">Negative</span>
+</div>
+</div>
+</div>
+<!-- Card 4: Recalled -->
+<div class="group p-5 rounded-xl bg-surface-container/60 border border-primary/40 shadow-lg shadow-primary/5 transition-all relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5 opacity-40"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-label uppercase tracking-widest text-primary font-bold flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Recalled
+                                </span>
+<span class="text-[10px] text-zinc-500">May 15, 2023</span>
+</div>
+<h4 class="font-body font-semibold text-on-surface mb-2">Organic Reach Analysis</h4>
+<div class="flex gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-[10px] text-on-surface-variant font-label uppercase tracking-tight">Analytics</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/20 text-[10px] text-secondary font-label uppercase tracking-tight">Positive</span>
+</div>
+</div>
+</div>
+<!-- Card 5: Stored -->
+<div class="group p-5 rounded-xl bg-surface-container-low/40 border border-outline-variant/10 hover:border-outline-variant/30 transition-all">
+<div class="flex justify-between items-start mb-3">
+<span class="text-[10px] font-label uppercase tracking-widest text-zinc-600 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full border border-zinc-600"></span> Stored
+                            </span>
+<span class="text-[10px] text-zinc-500">Jan 10, 2024</span>
+</div>
+<h4 class="font-body font-semibold text-on-surface mb-2">Newsletter Test Run</h4>
+<div class="flex gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-[10px] text-on-surface-variant font-label uppercase tracking-tight">Product</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-[10px] text-on-surface-variant font-label uppercase tracking-tight">Neutral</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+</body></html>
