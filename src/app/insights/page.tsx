@@ -31,7 +31,7 @@ export default function InsightsPage() {
   const [data, setData] = useState<InsightsData | null>(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  const fetchData = () => {
     if (!token) return;
     fetch("/api/insights", {
       headers: { Authorization: `Bearer ${token}` },
@@ -42,7 +42,30 @@ export default function InsightsPage() {
         setLoading(false);
       })
       .catch(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    fetchData();
   }, [token]);
+
+  const handleDelete = async (id: number) => {
+    if (!token) return;
+    if (!confirm("Are you sure you want to delete this decision?")) return;
+    
+    try {
+      const res = await fetch(`/api/decisions/${id}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      if (res.ok) {
+        fetchData();
+      } else {
+        alert("Failed to delete decision");
+      }
+    } catch (err) {
+      console.error("Failed to delete decision", err);
+    }
+  };
 
   const formatDate = (dateStr: string) => {
     const d = new Date(dateStr);
@@ -234,6 +257,13 @@ export default function InsightsPage() {
                         <span className="text-[10px] text-outline ml-auto">
                           {formatDate(d.date)}
                         </span>
+                        <button
+                          onClick={() => handleDelete(d.id)}
+                          className="ml-4 w-8 h-8 rounded-full flex items-center justify-center bg-error/10 text-error hover:bg-error hover:text-on-error transition-colors"
+                          title="Delete Decision"
+                        >
+                          <span className="material-symbols-outlined text-[16px]">delete</span>
+                        </button>
                       </div>
                     </div>
                   </div>
