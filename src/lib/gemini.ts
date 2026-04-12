@@ -6,7 +6,6 @@ You must always:
 - Reference specific past decisions the user made
 - Identify patterns across multiple past decisions
 - Name the category and outcome of recalled decisions
-- Give a confidence level (as a percentage) based on how many similar decisions exist in memory
 - Never give generic advice that ignores the history
 
 If the user has no past decisions yet, say so honestly and ask them to log some decisions first.`;
@@ -17,8 +16,13 @@ ${context}
 
 User question: ${userQuestion}
 
-Give personalised advice based only on their actual decision history. Reference specific decisions by name. Identify the pattern. Give a clear recommendation.
-End with: Confidence: X% based on Y recalled memories.`;
+Give personalised advice based only on their actual decision history. 
+Format your response exactly in this order:
+- Keep it short, focusing only on important points.
+- Do NOT use any asterisks (* or **) for formatting bold text or bullet points. Use standard dashes (-) for bullets instead.
+- Do NOT literally quote "Memory 1" or "Memory 2". Refer to the decisions naturally.
+- Explanation: Use bullet points to identify the pattern and explain your reasoning.
+- Conclusion: Provide a clear, concise recommendation.`;
 }
 
 export async function askGemini(
@@ -40,7 +44,7 @@ _Note: Connect your Gemini API key for full AI-powered analysis._`;
 
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({
-    model: "gemini-1.5-flash",
+    model: "gemini-2.5-flash",
     systemInstruction: SYSTEM_PROMPT,
   });
 
@@ -106,7 +110,7 @@ export async function askGeminiStream(
 
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({
-    model: "gemini-1.5-flash",
+    model: "gemini-2.5-flash",
     systemInstruction: SYSTEM_PROMPT,
   });
 
@@ -124,7 +128,7 @@ export async function getInsightFromGemini(context: string): Promise<string> {
 
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({
-    model: "gemini-1.5-flash",
+    model: "gemini-2.5-flash",
     systemInstruction: SYSTEM_PROMPT,
   });
 
