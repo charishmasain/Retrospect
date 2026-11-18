@@ -79,9 +79,6 @@ Retrospect can be deployed using [Vercel](https://vercel.com/), the platform bui
 
 For more information, refer to the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).
 
-## 📌 Project Status
-
-Currently under development.
 
 ---
 
